@@ -1,0 +1,20 @@
+RewriteEngine on
+# Current path
+RewriteBase /EDC
+
+# MAIN PAGE --> /home o /Bansky
+RewriteRule ^Bansky$ src/front_end/index.php [L,NC]
+RewriteRule ^home$ src/front_end/index.php [L,NC]
+
+# IMAGE SRC 
+RewriteRule ^BALLOON_GIRL$ src/img/BALLOON_GIRL.jpg [L,NC]
+RewriteRule ^MOBILE_LOVERS$ src/img/MOBILE_LOVERS.jpg [L,NC]
+RewriteRule ^TSOAMFS$ src/img/TSOAMFS.jpg [L,NC]
+RewriteRule ^SLAVE_LABOUR$ src/img/SLAVE_LABOUR.jpg [L,NC]
+RewriteRule ^DEVOLVED_PARLIAMENT$ src/img/DEVOLVED_PARLIAMENT.jpg [L,NC]
+
+# Protect .HTACCESS
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
