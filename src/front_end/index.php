@@ -105,13 +105,7 @@
     
     $(document).ready(() => {
         getImages();
-
-        //setInterval(getImages, 1000);
     });
-
-    const updateLike = () => {
-        console.log("");
-    }
 
     const showImages = (links) => {
         PageFunc.showPosters(links);
@@ -125,7 +119,7 @@
             success: (response) => {
                 console.log(response.links);
                 showImages(response.links);   // show images
-                updateImages(response.links); // sync session data (likes)
+                syncImages(response.links); // sync session data (likes)
             },
             error: (xhr) => {
                 console.log(xhr);
@@ -135,7 +129,7 @@
         $.ajax(options);
     }
 
-    const updateImages = (obj) => {
+    const syncImages = (obj) => {
         const s = JSON.parse('<?php echo json_encode($_SESSION); ?>');
         console.log(s);
         for (let i=0; i<obj.length; i++){
