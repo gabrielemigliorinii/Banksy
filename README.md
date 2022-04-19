@@ -1,2 +1,2 @@
-# Bansky
+# Banksy
 School Project EDC
